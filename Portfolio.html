@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bharvi Patel — BTech IT Graduate & Full-Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0c;
+    --bg-2: #121215;
+    --bg-3: #18181c;
+    --ink: #f2f1ee;
+    --ink-2: #b5b3ad;
+    --ink-3: #75736d;
+    --accent: #a855f7;
+    --accent-2: #c084fc;
+    --accent-glow: rgba(168,85,247,0.18);
+    --rule: #232327;
+    --sans: 'Inter', system-ui, sans-serif;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --max: 780px;
+    --gutter: 2rem;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: -200px; left: 50%;
+    width: 900px; height: 600px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav, .hero, section, footer { position: relative; z-index: 1; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,10,12,0.75);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter);
+    display: flex; align-items: center; justify-content: space-between; height: 56px;
+  }
+  .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--ink-2); text-decoration: none; transition: color 0.15s; }
+  .nav-links a:hover { color: var(--accent-2); }
+
+  /* HERO */
+  .hero {
+    max-width: var(--max); margin: 0 auto;
+    padding: 4.5rem var(--gutter) 3.5rem;
+    border-bottom: 1px solid var(--rule);
+    display: grid; grid-template-columns: auto 1fr; gap: 2.5rem; align-items: center;
+  }
+  .avatar-wrap {
+    width: 150px; height: 150px; border-radius: 50%;
+    background: linear-gradient(145deg, var(--accent), #6d28d9);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; padding: 3px;
+    box-shadow: 0 0 40px var(--accent-glow);
+  }
+  .avatar-inner {
+    width: 100%; height: 100%; border-radius: 50%;
+    background: var(--bg-3);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .avatar-inner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .avatar-initials { font-family: var(--serif); font-size: 3rem; color: var(--ink-2); }
+
+  .hero-eyebrow {
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent-2); margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(1.9rem, 4.6vw, 2.8rem);
+    line-height: 1.18; color: var(--ink); margin-bottom: 1rem; max-width: 500px;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent-2); }
+  .hero-sub { font-size: 0.95rem; color: var(--ink-2); max-width: 480px; margin-bottom: 1.5rem; line-height: 1.7; }
+  .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.6rem 1.2rem; border-radius: 6px;
+    font-size: 0.85rem; font-weight: 600; text-decoration: none;
+    cursor: pointer; transition: all 0.15s; border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-2); box-shadow: 0 0 20px var(--accent-glow); }
+  .btn-secondary { background: transparent; color: var(--ink); border: 1px solid var(--rule); }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent-2); }
+  .btn-ghost {
+    background: var(--bg-3); color: var(--ink-2); border: 1px solid var(--rule);
+    font-size: 0.8rem; padding: 0.5rem 0.9rem;
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent-2); }
+
+  /* SECTIONS */
+  section { max-width: var(--max); margin: 0 auto; padding: 3.5rem var(--gutter); border-bottom: 1px solid var(--rule); }
+  .section-label {
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-3); margin-bottom: 1.75rem;
+  }
+
+  /* ABOUT */
+  .about-text p { color: var(--ink-2); margin-bottom: 1rem; font-size: 0.95rem; max-width: 640px; }
+  .about-text strong { color: var(--ink); }
+  .freelance-tag {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    margin-top: 0.5rem; padding: 0.5rem 0.9rem;
+    background: var(--bg-2); border: 1px solid var(--rule); border-radius: 6px;
+    font-size: 0.825rem; color: var(--accent-2); font-weight: 500;
+  }
+  .freelance-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; flex-shrink: 0; }
+
+  /* EDUCATION */
+  .edu-card {
+    background: var(--bg-2); border: 1px solid var(--rule);
+    border-radius: 10px; padding: 1.75rem; display: grid;
+    grid-template-columns: 1fr auto; gap: 1rem; align-items: start;
+  }
+  .edu-degree { font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.25rem; }
+  .edu-college { font-size: 0.9rem; color: var(--accent-2); font-weight: 500; margin-bottom: 0.5rem; }
+  .edu-detail { font-size: 0.85rem; color: var(--ink-2); }
+  .edu-cgpa {
+    background: linear-gradient(145deg, var(--accent), #6d28d9); color: #fff; border-radius: 8px;
+    padding: 0.75rem 1.1rem; text-align: center; white-space: nowrap;
+  }
+  .cgpa-num { font-family: var(--serif); font-size: 1.75rem; line-height: 1; }
+  .cgpa-label { font-size: 0.7rem; opacity: 0.9; margin-top: 0.2rem; }
+  .coursework { margin-top: 1.25rem; }
+  .coursework-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 0.6rem; }
+  .course-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .course-tag {
+    font-size: 0.775rem; background: var(--bg-3); border: 1px solid var(--rule);
+    color: var(--accent-2); border-radius: 4px; padding: 2px 9px; font-weight: 500;
+  }
+
+  /* PROJECTS */
+  .projects-grid { display: grid; gap: 1rem; }
+  .project-card {
+    background: var(--bg-2); border: 1px solid var(--rule); border-radius: 10px;
+    padding: 1.5rem; transition: border-color 0.2s, transform 0.2s;
+  }
+  .project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .project-title { font-size: 0.975rem; font-weight: 600; color: var(--ink); margin-bottom: 0.6rem; }
+  .project-desc { font-size: 0.85rem; color: var(--ink-2); line-height: 1.75; margin-bottom: 1rem; }
+  .project-desc p { margin-bottom: 0.7rem; }
+  .project-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag-plain {
+    font-size: 0.75rem; color: var(--ink-2); background: var(--bg-3);
+    border: 1px solid var(--rule); border-radius: 4px; padding: 2px 8px; font-weight: 500;
+  }
+  .btn-pair { display: flex; gap: 0.5rem; }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; }
+  .skill-group { background: var(--bg-2); border: 1px solid var(--rule); border-radius: 8px; padding: 1.125rem; }
+  .skill-group-title { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 0.75rem; }
+  .skill-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .skill-list li { font-size: 0.8rem; color: var(--ink-2); background: var(--bg-3); border: 1px solid var(--rule); border-radius: 4px; padding: 3px 8px; font-weight: 500; }
+
+
+  /* CONTACT */
+  .contact-inner {
+    background: var(--bg-2); border: 1px solid var(--rule); border-radius: 12px;
+    padding: 2.25rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap;
+  }
+  .contact-heading { font-family: var(--serif); font-size: 1.5rem; color: var(--ink); margin-bottom: 0.4rem; }
+  .contact-sub { font-size: 0.9rem; color: var(--ink-2); }
+  .contact-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+  footer {
+    max-width: var(--max); margin: 0 auto; padding: 1.5rem var(--gutter);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-copy { font-size: 0.8rem; color: var(--ink-3); }
+  .footer-links { display: flex; gap: 1.25rem; }
+  .footer-links a { font-size: 0.8rem; color: var(--ink-3); text-decoration: none; }
+  .footer-links a:hover { color: var(--accent-2); }
+
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 600px) {
+    .hero { grid-template-columns: 1fr; text-align: center; }
+    .avatar-wrap { margin: 0 auto; }
+    .hero-actions { justify-content: center; }
+    .edu-card { grid-template-columns: 1fr; }
+    .contact-inner { padding: 1.5rem; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">Bharvi Patel</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero reveal">
+  <div class="avatar-wrap">
+    <div class="avatar-inner">
+      <img src="BharviPatelImage.png" alt="Bharvi Patel" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <span class="avatar-initials" style="display:none;">BP</span>
+    </div>
+  </div>
+  <div>
+    <p class="hero-eyebrow">IT Graduate · Full-Stack Developer · Open to work & freelance</p>
+    <h1>I turn ideas into <em>working, deployed</em> products.</h1>
+    <p class="hero-sub">
+      B.Tech in Information Technology, ITM (SLS) Baroda University, 2026. Most of what I know,
+      I learned by building three real apps end to end — auth, databases, AI integrations, and
+      all the messy parts in between. Currently looking for full-time roles, and open to
+      freelance/contract work on the side.
+    </p>
+    <div class="hero-actions">
+      <a href="Bharvi Patel Resume.pdf" target="_blank" class="btn btn-primary">View Resume</a>
+      <a href="#contact" class="btn btn-secondary">Contact me</a>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">About</p>
+  <div class="about-text reveal">
+    <p>
+      Hi, I'm <strong>Bharvi</strong>. I graduated with a B.Tech in IT in 2026, but most of what
+      I actually know how to do came from building things outside the classroom — three full
+      products, each one teaching me something I didn't know I needed: how auth actually breaks
+      in production, how to wire an AI API into a real feature instead of a demo, how to design
+      a database schema that doesn't fall apart when you add "just one more field."
+    </p>
+    <p>
+      I like the unglamorous parts of building software just as much as the fun ones — writing
+      validation that actually catches bad input, thinking through what happens when a user
+      does something weird, deploying something and watching it survive contact with real traffic.
+      My three main projects (below) all started as "can I build this?" and ended up live on
+      Vercel and Render.
+    </p>
+    <p>
+      Right now I'm looking for full-time Software Engineering / Full-Stack roles where I can
+      keep building real things and learn fast on a team.
+    </p>
+    <div class="freelance-tag">
+      <span class="freelance-dot"></span>
+      Also open to freelance & contract web development work
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <p class="section-label">Education</p>
+  <div class="edu-card reveal">
+    <div>
+      <div class="edu-degree">B.Tech in Information Technology</div>
+      <div class="edu-college">ITM (SLS) Baroda University, Vadodara</div>
+      <div class="edu-detail">Graduated: May 2026 &nbsp;·&nbsp; Gujarat, India</div>
+      <div class="coursework">
+        <div class="coursework-label">Relevant coursework</div>
+        <div class="course-tags">
+          <span class="course-tag">Web Technologies</span>
+          <span class="course-tag">Software Engineering</span>
+          <span class="course-tag">Data Structures & Algorithms</span>
+          <span class="course-tag">DBMS</span>
+          <span class="course-tag">Operating Systems</span>
+          <span class="course-tag">Computer Networks</span>
+          <span class="course-tag">Data Analytics</span>
+          <span class="course-tag">Machine Learning</span>
+        </div>
+      </div>
+    </div>
+    <div class="edu-cgpa">
+      <div class="cgpa-num">8.36</div>
+      <div class="cgpa-label">CGPA / 10</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label">Projects</p>
+  <div class="projects-grid">
+
+    <div class="project-card reveal">
+      <div class="project-title">Sq2Cube — 2D to 3D AI Converter</div>
+      <div class="project-desc">
+        <p>
+          I wanted to see if I could take a flat image and actually get a usable 3D model out
+          of it — not a toy demo, a real pipeline. Sq2Cube takes an image, a batch of images,
+          or just a text prompt, and hands back a downloadable GLB/OBJ model using fal.ai's
+          TripoSR and Tripo3D v2.5 under the hood.
+        </p>
+        <p>
+          The auth side ended up being the bigger project honestly — JWT access + refresh tokens,
+          OTP email verification, Google/GitHub OAuth, and a full password-reset flow over Gmail
+          SMTP. I also built out an admin panel (user management, moderation, live analytics,
+          a maintenance-mode kill switch) and locked down uploads with MIME checks, magic-byte
+          signature verification, and rate limiting — the kind of stuff that doesn't show up in
+          a demo but matters the moment real users touch it.
+        </p>
+      </div>
+      <div class="project-footer">
+        <div class="tag-row">
+          <span class="tag-plain">React</span>
+          <span class="tag-plain">FastAPI</span>
+          <span class="tag-plain">PostgreSQL</span>
+          <span class="tag-plain">fal.ai</span>
+          <span class="tag-plain">JWT</span>
+        </div>
+        <div class="btn-pair">
+          <a href="https://github.com/Bharvi-Patel/Sq2Cube" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+          <a href="https://sq2cube.vercel.app" target="_blank" class="btn btn-ghost">Live ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-title">FitPact — Social Fitness Accountability App</div>
+      <div class="project-desc">
+        <p>
+          Built this one out of a pretty relatable problem — it's easy to skip a workout when
+          nobody's watching. FitPact fixes that by putting you in a "pact" with friends: log
+          your workouts, climb a shared leaderboard, and if you miss a day, the group finds out.
+        </p>
+        <p>
+          The fun part was hooking up Groq's LLaMA 3.1 to write a personalized, slightly mean
+          roast for anyone who skips — it actually pulls their real streak, strike count, and
+          points from MongoDB so the roast lands like it knows you. There's also a streak engine
+          with a built-in weekly rest day (miss once, no penalty; miss twice, you take a strike
+          and your streak resets), a 5-tier rank system from "Couch Potato" to "Beast Mode," and
+          AI-generated weekly workout plans tailored to each person's goals.
+        </p>
+      </div>
+      <div class="project-footer">
+        <div class="tag-row">
+          <span class="tag-plain">Next.js</span>
+          <span class="tag-plain">MongoDB Atlas</span>
+          <span class="tag-plain">NextAuth</span>
+          <span class="tag-plain">Groq (LLaMA 3.1)</span>
+          <span class="tag-plain">Cloudinary</span>
+        </div>
+        <div class="btn-pair">
+          <a href="https://github.com/Bharvi-Patel/FitPact" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+          <a href="https://fit-pact-flax.vercel.app" target="_blank" class="btn btn-ghost">Live ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-title">FinBoard — Personal Finance Dashboard</div>
+      <div class="project-desc">
+        <p>
+          I kept losing track of where my money actually went, so I built the dashboard I wished
+          existed. FinBoard logs transactions, isolates each user's data completely, and turns
+          raw entries into something readable — balance trends, category breakdowns, and
+          month-over-month comparisons, all rendered with Recharts.
+        </p>
+        <p>
+          Most of the engineering here is on the API side: a proper REST design with CRUD,
+          server-side filtering and pagination, and MongoDB aggregation pipelines doing the
+          heavy lifting for the financial summaries instead of computing them client-side.
+          JWT auth with bcrypt hashing keeps it locked down, and account deletion cascades
+          cleanly instead of leaving orphaned data behind.
+        </p>
+      </div>
+      <div class="project-footer">
+        <div class="tag-row">
+          <span class="tag-plain">React</span>
+          <span class="tag-plain">Node.js</span>
+          <span class="tag-plain">Express</span>
+          <span class="tag-plain">MongoDB</span>
+          <span class="tag-plain">JWT</span>
+        </div>
+        <div class="btn-pair">
+          <a href="https://github.com/Bharvi-Patel/FinBoard" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+          <a href="https://fin-board-pearl.vercel.app" target="_blank" class="btn btn-ghost">Live ↗</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label">Skills</p>
+  <div class="skills-grid reveal">
+    <div class="skill-group">
+      <div class="skill-group-title">Languages</div>
+      <ul class="skill-list">
+        <li>Python</li><li>Java</li><li>JavaScript</li><li>SQL</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Frontend</div>
+      <ul class="skill-list">
+        <li>React</li><li>Next.js</li><li>Bootstrap</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Backend</div>
+      <ul class="skill-list">
+        <li>Node.js</li><li>Express</li><li>FastAPI</li><li>REST API Design</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Databases</div>
+      <ul class="skill-list">
+        <li>PostgreSQL</li><li>MongoDB</li><li>MySQL</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Auth & APIs</div>
+      <ul class="skill-list">
+        <li>JWT</li><li>OAuth 2.0</li><li>NextAuth</li><li>Groq</li><li>fal.ai</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Tools & Platforms</div>
+      <ul class="skill-list">
+        <li>Git</li><li>GitHub</li><li>VS Code</li><li>Vercel</li><li>Render</li><li>Neon</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner reveal">
+    <div>
+      <div class="contact-heading">Let's build something</div>
+      <p class="contact-sub">Open to full-time Software Engineering roles, and freelance/contract web projects.</p>
+    </div>
+    <div class="contact-links">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bharvipatel2029@gmail.com&su=Reaching%20out%20via%20your%20portfolio" target="_blank" class="btn btn-primary">Send an email</a>
+      <a href="https://linkedin.com/in/bharvi-patel" target="_blank" class="btn btn-secondary">LinkedIn</a>
+      <a href="https://github.com/Bharvi-Patel" target="_blank" class="btn btn-secondary">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-copy">© 2026 Bharvi Patel</span>
+  <div class="footer-links">
+    <a href="https://github.com/Bharvi-Patel" target="_blank">GitHub</a>
+    <a href="https://linkedin.com/in/bharvi-patel" target="_blank">LinkedIn</a>
+    <a href="Bharvi Patel Resume.pdf" target="_blank">Resume</a>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
